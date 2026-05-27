@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ClarenceXploits</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins, Arial, sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* LOADING */
+#loading{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+z-index:9999;
+}
+
+.loader{
+width:55px;
+height:55px;
+border:3px solid #222;
+border-top:3px solid #fff;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+/* BACKGROUND GLOW */
+body::before{
+content:'';
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#fff,transparent);
+filter:blur(200px);
+opacity:0.10;
+z-index:-1;
+animation:float 8s infinite alternate ease-in-out;
+}
+
+@keyframes float{
+from{transform:translate(0,0);}
+to{transform:translate(120px,80px);}
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 8%;
+border-bottom:1px solid #222;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+}
+
+/* LOGO ADDED */
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:40px;
+height:40px;
+border-radius:50%;
+border:1px solid #333;
+}
+
+nav a{
+color:#aaa;
+margin-left:14px;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#fff;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px 20px;
+}
+
+/* BANNER ADDED */
+.banner{
+width:90%;
+max-width:900px;
+height:160px;
+margin:20px auto;
+border-radius:16px;
+background:#111;
+border:1px solid #222;
+overflow:hidden;
+}
+
+.banner img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* STATS ADDED */
+.stats{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+.statCard{
+background:rgba(255,255,255,0.03);
+border:1px solid #222;
+padding:12px 18px;
+border-radius:12px;
+min-width:120px;
+text-align:center;
+}
+
+.hero h1{
+font-size:48px;
+letter-spacing:1px;
+margin-top:10px;
+}
+
+.hero span{
+color:#aaa;
+}
+
+.hero p{
+margin-top:10px;
+color:#888;
+font-size:14px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:18px;
+padding:40px 8%;
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.03);
+border:1px solid #222;
+border-radius:14px;
+padding:20px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:#fff;
+box-shadow:0 0 20px rgba(255,255,255,0.12);
+}
+
+/* ICON */
+.icon{
+width:45px;
+height:45px;
+border-radius:10px;
+background:#111;
+border:1px solid #333;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+margin-bottom:10px;
+color:#fff;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 14px;
+border-radius:10px;
+background:#fff;
+color:#000;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+<div class="loader"></div>
+<p style="margin-top:12px;color:#aaa;font-size:14px;">
+Loading...
+</p>
+</div>
+
+<!-- HEADER -->
+<header>
+
+<div class="logo">
+<img id="ytLogo" src="">
+<b>ClarenceXploits</b>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="scripts.html">Scripts</a>
+<a href="serversides.html">Serversides</a>
+<a href="executors.html">Executors</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+<div class="hero">
+
+<!-- BANNER -->
+<div class="banner">
+<img id="ytBanner" src="">
+</div>
+
+<h1>Official Website</h1>
+<p>Subscribe and Like To Increase it!</p>
+
+<!-- STATS -->
+<div class="stats">
+
+<div class="statCard">
+<h3 id="subCount">Loading...</h3>
+<p>Subscribers</p>
+</div>
+
+<div class="statCard">
+<h3 id="viewCount">Loading...</h3>
+<p>Views</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- GRID -->
+<div class="grid">
+
+<div class="card">
+<div class="icon">01</div>
+<h3>Scripts Hub</h3>
+<p>FE scripts, trolling, require scripts.</p>
+<a class="btn" href="scripts.html">Open</a>
+</div>
+
+<div class="card">
+<div class="icon">02</div>
+<h3>Serversides</h3>
+<p>Server-side tools and showcases.</p>
+<a class="btn" href="serversides.html">Open</a>
+</div>
+
+<div class="card">
+<div class="icon">03</div>
+<h3>Executors</h3>
+<p>Mobile & PC executor tools.</p>
+<a class="btn" href="executors.html">Open</a>
+</div>
+
+</div>
+
+<script>
+
+/* YOUR DATA */
+const API_KEY = "AIzaSyAHTYkD0K31FT4SS8Q4UsTANaPhEt6gG9c";
+const CHANNEL_ID = "UCB7vEv72yqv7udYhtt2Mp-A";
+
+/* LOAD YOUTUBE DATA */
+async function loadYT(){
+
+try{
+
+const res = await fetch(
+`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${CHANNEL_ID}&key=${API_KEY}`
+);
+
+const data = await res.json();
+
+const ch = data.items[0];
+
+document.getElementById("ytLogo").src =
+ch.snippet.thumbnails.default.url;
+
+document.getElementById("subCount").innerText =
+Number(ch.statistics.subscriberCount).toLocaleString();
+
+document.getElementById("viewCount").innerText =
+Number(ch.statistics.viewCount).toLocaleString();
+
+/* banner fix (may not always exist in API) */
+document.getElementById("ytBanner").src =
+ch.snippet.thumbnails.high.url;
+
+}catch(e){
+console.log("YT ERROR", e);
+}
+
+}
+
+/* LOADING SCREEN */
+window.onload = function(){
+setTimeout(()=>{
+document.getElementById("loading").style.display="none";
+},1000);
+
+loadYT();
+};
+
+/* PWA */
+if ("serviceWorker" in navigator) {
+window.addEventListener("load", () => {
+navigator.serviceWorker.register("sw.js").catch(()=>{});
+});
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Serversides Hub</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* GLOW */
+body::before{
+content:'';
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#fff,transparent);
+filter:blur(200px);
+opacity:0.10;
+z-index:-1;
+animation:float 8s infinite alternate ease-in-out;
+}
+
+@keyframes float{
+from{transform:translate(0,0);}
+to{transform:translate(120px,80px);}
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+border-bottom:1px solid #222;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+}
+
+nav a{
+color:#aaa;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#fff;
+text-shadow:0 0 10px #fff;
+}
+
+/* TITLE */
+.title{
+text-align:center;
+padding:50px 20px 20px;
+}
+
+.title h1{
+font-size:44px;
+}
+
+.title p{
+color:#aaa;
+margin-top:8px;
+}
+
+/* GRID */
+.container{
+padding:40px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.03);
+border:1px solid #222;
+border-radius:14px;
+padding:18px;
+transition:0.3s;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#fff;
+box-shadow:0 0 25px rgba(255,255,255,0.15);
+}
+
+/* MAIN IMAGE */
+.cardImage{
+width:100%;
+height:190px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:14px;
+border:1px solid #222;
+background:#111;
+}
+
+/* ICON */
+.icon{
+width:65px;
+height:65px;
+border-radius:16px;
+background:#111;
+border:1px solid #333;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:12px;
+overflow:hidden;
+box-shadow:0 0 15px rgba(255,255,255,0.08);
+}
+
+.icon img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+/* TAG */
+.tag{
+display:inline-block;
+padding:4px 8px;
+font-size:12px;
+border-radius:6px;
+background:#111;
+border:1px solid #333;
+color:#aaa;
+margin-top:8px;
+}
+
+/* BUTTON WRAPPER */
+.btnGroup{
+display:flex;
+gap:10px;
+margin-top:12px;
+flex-wrap:wrap;
+}
+
+/* BUTTON */
+.btn{
+flex:1;
+text-align:center;
+padding:10px 12px;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+border:none;
+text-decoration:none;
+display:inline-block;
+min-width:120px;
+}
+
+/* OPEN BUTTON */
+.openBtn{
+background:#fff;
+color:#000;
+}
+
+.openBtn:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px rgba(255,255,255,0.2);
+}
+
+/* SHOWCASE BUTTON */
+.showBtn{
+background:#111;
+color:#fff;
+border:1px solid #333;
+}
+
+.showBtn:hover{
+border-color:#fff;
+transform:scale(1.05);
+}
+
+/* PLACEHOLDER BUTTON */
+.placeholderBtn{
+background:#0f0f0f;
+color:#777;
+border:1px dashed #333;
+}
+
+.placeholderBtn:hover{
+border-color:#666;
+color:#aaa;
+}
+
+/* DISCORD */
+.discord{
+margin:50px auto;
+max-width:650px;
+text-align:center;
+background:rgba(255,255,255,0.04);
+border:1px solid #333;
+border-radius:16px;
+padding:25px;
+transition:0.3s;
+}
+
+.discord:hover{
+border-color:#5865F2;
+box-shadow:0 0 25px rgba(88,101,242,0.25);
+}
+
+.discord a{
+display:inline-block;
+margin-top:15px;
+padding:12px 18px;
+background:#5865F2;
+color:#fff;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.discord a:hover{
+transform:scale(1.05);
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+header{
+flex-direction:column;
+gap:12px;
+}
+
+.title h1{
+font-size:34px;
+}
+
+.cardImage{
+height:160px;
+}
+
+.icon{
+width:58px;
+height:58px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<b>ClarenceXploits</b>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="scripts.html">Scripts</a>
+<a href="serversides.html">Serversides</a>
+<a href="executors.html">Executors</a>
+</nav>
+
+</header>
+
+<div class="title">
+<h1>Serversides</h1>
+<p>Paid Serversides</p>
+</div>
+
+<div class="container">
+
+<!-- CARD 1 -->
+<div class="card">
+
+<img
+class="cardImage"
+src="https://s3-eu-west-1.amazonaws.com/tpd/logos/692b09516c9fbf29e3ea6c11/0x0.png"
+alt="Serverside XYZ"
+onerror="this.src='https://placehold.co/600x300/111111/FFFFFF?text=Serverside+XYZ';"
+>
+
+<div class="icon">
+<img
+src="https://s3-eu-west-1.amazonaws.com/tpd/logos/692b09516c9fbf29e3ea6c11/0x0.png"
+alt="SS Icon"
+>
+</div>
+
+<h3>Serverside XYZ</h3>
+
+<span class="tag"> Top Trending 🔥</span>
+<span class="tag">Verified ✔️</span>
+<span class="tag">Great Reviews 💯</span
+<span class="tag">Web Execution 🌐</span>
+<div class="btnGroup">
+
+<a
+class="btn openBtn"
+href="https://serversiding.xyz/"
+target="_blank">
+Open
+</a>
+
+<a
+class="btn showBtn"
+href="https://youtu.be/1s4dLG405J0?si=ouU5OG7AsgkfHT3d"
+target="_blank">
+Showcase
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+<div class="card">
+
+<img
+class="cardImage"
+src="https://i.ytimg.com/vi/wW-YvTyEN7I/maxresdefault.jpg"
+alt="Exoliner Serverside"
+>
+
+<div class="icon">
+<img
+src="https://s3-eu-west-1.amazonaws.com/tpd/logos/678dc0626fb402becde5847e/0x0.png"
+alt="Exoliner Icon"
+>
+</div>
+
+<h3>Exoliner Serverside</h3>
+
+<span class="tag"> Top Trending 🔥</span>
+<span class="tag">Verified ✔️</span>
+<span class="tag">Great Reviews 💯</span
+<span class="tag">Web Execution 🌐</span>
+<div class="btnGroup">
+
+<a
+class="btn openBtn"
+href="https://exoliner.wtf/"
+target="_blank">
+Open
+</a>
+
+<a
+class="btn showBtn"
+href="https://youtu.be/K_UNwQqQDiU?si=XBtmTRvqIw8-6W5O"
+target="_blank">
+Showcase
+</a>
+
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+<div class="card">
+
+<img
+class="cardImage"
+src="https://i.ytimg.com/vi/5PSNL1qE6VY/maxresdefault.jpg"
+alt="Nova Serverside"
+>
+
+<div class="icon">
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvBH6G8D_kJedSFsj9ee_YzpwOTh8y_r43lHOWLHIiOa3kJ3UH5Y_eGEZD&s=10"
+alt="PL Icon"
+>
+</div>
+
+<h3>Nova Serverside</h3>
+<span class="tag"> Popular 🔥</span>
+<span class="tag">Verified ✔️</span>
+<span class="tag">Web Execution 🌐</span>
+<div class="btnGroup">
+
+<a
+class="btn openBtn"
+href="https://serverside.gg/"
+target="_blank">
+Open
+</a>
+
+<a
+class="btn showBtn"
+href="https://youtu.be/5PSNL1qE6VY"
+target="_blank">
+Showcase
+</a>
+
+</div>
+
+</div>
+
+<!-- PLACEHOLDER CARD 1 -->
+<div class="card">
+
+<img
+class="cardImage"
+src="https://placehold.co/600x300/111111/FFFFFF?text=Coming+Soon"
+alt="Placeholder"
+>
+
+<div class="icon">
+<img
+src="https://placehold.co/100x100/111111/FFFFFF?text=?"
+alt="Placeholder Icon"
+>
+</div>
+
+<h3>Coming Soon</h3>
+
+<span class="tag">Placeholder</span>
+
+<div class="btnGroup">
+
+<a
+class="btn placeholderBtn"
+href="#">
+Open
+</a>
+
+<a
+class="btn placeholderBtn"
+href="#">
+Showcase
+</a>
+
+</div>
+
+</div>
+
+<!-- PLACEHOLDER CARD 2 -->
+<div class="card">
+
+<img
+class="cardImage"
+src="https://placehold.co/600x300/111111/FFFFFF?text=Coming+Soon"
+alt="Placeholder"
+>
+
+<div class="icon">
+<img
+src="https://placehold.co/100x100/111111/FFFFFF?text=?"
+alt="Placeholder Icon"
+>
+</div>
+
+<h3>Coming Soon</h3>
+
+<span class="tag">Placeholder</span>
+
+<div class="btnGroup">
+
+<a
+class="btn placeholderBtn"
+href="#">
+Open
+</a>
+
+<a
+class="btn placeholderBtn"
+href="#">
+Showcase
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- DISCORD -->
+<div class="discord">
+
+<h2>Join Our Discord</h2>
+
+<p style="color:#aaa;margin-top:8px;">
+Get updates, scripts, and community support
+</p>
+
+<a href="https://discord.gg/yajKshB3GP" target="_blank">
+Join Discord Server
+</a>
+
+</div>
+
+</body>
+</html>
